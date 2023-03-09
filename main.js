@@ -1,6 +1,4 @@
-import './style.css'
-
-const form = document.querySelector('form')
+const form = document.querySelector('#input-form')
 const output = document.querySelector('#output')
 
 form.addEventListener('submit', (event) => {
