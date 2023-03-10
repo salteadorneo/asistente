@@ -10,81 +10,15 @@
 </head>
 
 <body class="dark:bg-gray-700 dark:text-gray-100">
-  <div id="app">
-    <div class="relative px-6 lg:px-8">
-      <div class="mx-auto max-w-2xl py-16">
-        <div class="text-center">
-          <p class="mb-2 text-md sm:text-lg leading-8">
-            ¿Tienes una pregunta? ¿Quieres saber algo?
-          </p>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-            Un <span class="text-transparent bg-clip-text bg-gradient-to-br from-[#5F7FFF] to-[#566cc2]">asistente
-              virtual</span><br />que no necesitas
-          </h1>
-          <p class="mt-6 text-lg leading-8">
-            Puede que no te responda, pero inténtalo.
-          </p>
-          <form id="input-form" class="my-8">
-            <div class="relative">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none dark:text-gray-400">
-                <svg width="24" height="24" viewBox="0 0 1.44 1.44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.54 0.54a0.18 0.18 0 1 1 0.24 0.17 0.09 0.09 0 0 0 -0.06 0.084V0.87m0 0.21v0.03"
-                    stroke="currentColor" stroke-width="0.09" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M0.72 1.396c0.372 0 0.674 -0.302 0.674 -0.674S1.092 0.044 0.72 0.044 0.044 0.348 0.044 0.72 0.348 1.396 0.72 1.396Z"
-                    stroke="currentColor" stroke-width="0.09" stroke-miterlimit="10" />
-                </svg>
-              </div>
-              <input name="prompt" type="search" id="prompt"
-                class="block w-full p-4 pl-12 md:pr-28 text-md text-gray-900 outline-none border border-gray-300 rounded-lg bg-gray-50 focus:border-[#5F7FFF] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-[#5F7FFF]"
-                placeholder="¿Qué es la luna?" required />
-              <button type="submit"
-                class="hidden md:block text-white absolute right-2.5 bottom-3 bg-[#5F7FFF] hover:bg-[#566cc2] transition-all focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#5F7FFF] dark:hover:bg-[#566cc2]">
-                Preguntar
-              </button>
-            </div>
-          </form>
-          <p id="output" class="text-center text-lg"></p>
-          <div id="buttons" class="hidden flex justify-center gap-4 mt-4 pb-14">
-            <button id="share" class="flex items-center gap-2 hover:underline">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 2.16 2.16"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="clr-i-solid clr-i-solid-path-1"
-                  d="M1.652 1.44a.3.3 0 0 0-.216.093l-.731-.366a.268.268 0 0 0 0-.168l.733-.373a.307.307 0 1 0-.064-.102L.649.893a.3.3 0 1 0 0 .38l.724.364a.296.296 0 0 0-.019.103.3.3 0 1 0 .3-.3Z" />
-                <path fill="none" d="M0 0h2.16v2.16H0z" />
-              </svg>
-              Compartir
-            </button>
-            <button id="reset" class="flex items-center gap-2 hover:underline">
-              <svg width="18" height="18" viewBox="0 0 0.9 0.9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M.111.45C.111.28.244.111.45.111.617.111.699.234.734.3H.63A.03.03 0 0 0 .6.33c0 .017.013.03.03.03h.18A.03.03 0 0 0 .84.33V.15A.03.03 0 0 0 .81.12a.03.03 0 0 0-.03.03v.109A.375.375 0 0 0 .45.051c-.244 0-.399.2-.399.399S.206.849.45.849A.39.39 0 0 0 .819.602.03.03 0 0 0 .802.563.03.03 0 0 0 .763.58.336.336 0 0 1 .45.789.338.338 0 0 1 .111.45Z"
-                  fill="currentColor" />
-              </svg>
-              Hacer otra pregunta
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="fixed bottom-4 left-4">
-        <a href="https://github.com/salteadorneo/asistente-lol" target="_blank"
-          class="flex items-center gap-2 text-xs dark:text-gray-300 hover:text-black transition-all">
-          <svg width="28" height="28" fill="currentColor" viewBox="0 0 1.44 1.44" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M.72.135a.6.6 0 0 0-.19 1.169c.03.005.041-.013.041-.028L.57 1.164c-.15.028-.189-.037-.201-.071a.218.218 0 0 0-.062-.084C.286.998.256.97.306.969a.12.12 0 0 1 .093.061.128.128 0 0 0 .175.049A.126.126 0 0 1 .612 1C.478.985.339.933.339.704A.234.234 0 0 1 .4.543.216.216 0 0 1 .406.384s.05-.016.165.061a.566.566 0 0 1 .3 0c.115-.078.165-.061.165-.061a.216.216 0 0 1 .006.159.232.232 0 0 1 .061.161c0 .23-.14.281-.274.296a.142.142 0 0 1 .041.111l-.001.165c0 .016.011.034.041.028A.6.6 0 0 0 .72.135Z" />
-          </svg>
-          salteadorneo/asistente-lol
-        </a>
-      </div>
-      <div class="fixed bottom-4 right-4">
-        <script data-name="BMC-Widget" data-cfasync="false"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="salteadorneo"
-          data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right"
-          data-x_margin="18" data-y_margin="18"></script>
-      </div>
-    </div>
-    <script type="module" src="/main.js"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
+  <div id="root"></div>
+  <div className='fixed bottom-4 right-4'>
+    <script data-name='BMC-Widget' data-cfasync='false' src='https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js'
+      data-id='salteadorneo' data-description='Support me on Buy me a coffee!' data-message='' data-color='#5F7FFF'
+      data-position='Right' data-x_margin='18' data-y_margin='18'></script>
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="/main.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
