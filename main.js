@@ -34,17 +34,21 @@ async function askQuestion (prompt) {
 
   const { content } = response
 
-  window.localStorage.setItem('content', content)
+  const contentTrim = content.trim()
 
-  output.innerHTML = content
+  window.localStorage.setItem('content', contentTrim)
+
+  output.innerHTML = contentTrim
 
   buttons.classList.remove('hidden')
 }
 
 shareButton.addEventListener('click', () => {
+  const prompt = window.localStorage.getItem('prompt')
+  const content = window.localStorage.getItem('content')
   navigator.share({
     title: 'asistente.lol',
-    text: output.innerHTML,
+    text: `${prompt}\n\n${content}\n`,
     url: window.location.href
   })
 })
