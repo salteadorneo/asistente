@@ -1,6 +1,6 @@
 const form = document.querySelector('#input-form')
 const input = form.querySelector('input')
-const output = document.querySelector('#output')
+input.focus()
 
 const buttons = document.querySelector('#buttons')
 const shareButton = document.querySelector('#share')
@@ -12,12 +12,13 @@ input.value = prompt
 
 const content = window.localStorage.getItem('content') || ''
 if (content) {
-  output.innerHTML = content
+  setInnerHTML('#output', content)
   buttons.classList.remove('hidden')
 }
 
 form.addEventListener('submit', (event) => {
-  output.innerHTML = '<img src="/loader.svg" alt="" class="mx-auto" />'
+  setInnerHTML('#output', '<img src="/loader.svg" alt="" class="mx-auto invert dark:invert-0" />')
+
   buttons.classList.add('hidden')
 
   event.preventDefault()
@@ -38,7 +39,7 @@ async function askQuestion (prompt) {
 
   window.localStorage.setItem('content', contentTrim)
 
-  output.innerHTML = contentTrim
+  setInnerHTML('#output', contentTrim)
 
   buttons.classList.remove('hidden')
 }
@@ -57,9 +58,13 @@ function reset () {
   window.localStorage.removeItem('prompt')
   window.localStorage.removeItem('content')
 
-  output.innerHTML = ''
+  setInnerHTML('#output', '')
   buttons.classList.add('hidden')
 
   input.value = ''
   input.focus()
+}
+
+function setInnerHTML (selector, html) {
+  document.querySelector(selector).innerHTML = html
 }
