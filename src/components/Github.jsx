@@ -5,8 +5,8 @@ export default function Github () {
   return (
     <div className='fixed bottom-4 left-4'>
       <a
-        href='https://github.com/salteadorneo/asistente-lol' target='_blank'
-        className='flex items-center gap-2 text-xs dark:text-gray-300 hover:text-black transition-all' rel='noreferrer'
+        href='https://github.com/salteadorneo/asistente' target='_blank'
+        className='flex items-center gap-2 text-xs dark:text-gray-300 hover:text-black dark:hover:text-white transition-all' rel='noreferrer'
       >
         <svg width='28' height='28' fill='currentColor' viewBox='0 0 1.44 1.44' xmlns='http://www.w3.org/2000/svg'>
           <path
@@ -14,7 +14,7 @@ export default function Github () {
           />
         </svg>
         <div class='flex flex-col'>
-          <p>salteadorneo/asistente-lol</p>
+          <p>salteadorneo/asistente</p>
           <p className='text-xs text-gray-500 dark:text-gray-400'>v{version}</p>
         </div>
       </a>
