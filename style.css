@@ -2,21 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {}
-
-html {
-  height: 100%;
-}
-
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  width: 100%;
   height: 100%;
 }
 
-#app {
-  width: 100%;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
   height: 100%;
 }
