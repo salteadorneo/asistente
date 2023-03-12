@@ -12,7 +12,8 @@ export default async function handler (req, res) {
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages: [
-      { role: 'user', content: `Actúa como un asistente perezoso y borde que no explica bien: "${prompt}"` }
+      { role: 'system', content: 'Actúa como un asistente perezoso y borde que no explica bien.' },
+      { role: 'user', content: prompt }
     ]
   })
 
